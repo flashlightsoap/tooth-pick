@@ -17,11 +17,13 @@ process copyFile {
 
     script:
     """
+    pwd
+    echo ${outputDir}
     # Create the output directory if it doesn't exist
     # mkdir -p ${outputDir}
 
     # Copy the input file to the output directory
-    cp ${inputFile} ${outputDir}/output_file.txt
+    #cp ${inputFile} ${outputDir}/output_file.txt
     """
 }
 
