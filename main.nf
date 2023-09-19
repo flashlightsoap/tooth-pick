@@ -19,6 +19,7 @@ process copyFile {
     """
     pwd
     echo ${outputDir}
+    echo ${inputFile}
     # Create the output directory if it doesn't exist
     # mkdir -p ${outputDir}
 
