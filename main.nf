@@ -12,7 +12,7 @@ process copyFile {
     file inputFile
 
     output:
-    file "/Users/amaan.saifan/Documents/kube/output_file123.txt"
+    file "/Users/amaan.saifan/Documents/kube/output_file.txt"
 
     script:
     """
@@ -20,7 +20,7 @@ process copyFile {
     # mkdir -p ${outputDir}
 
     # Copy the input file to the output directory
-    cp ${inputFile} /Users/amaan.saifan/Documents/kube/output_file123.txt
+    cp ${inputFile} ${outputDir}/output_file.txt
     """
 }
 
@@ -30,4 +30,11 @@ workflow {
     copyFile(params.inputFile)
 }
 
-
+// Define where to store the workflow execution and logs
+// You can change the directory to your preferred location
+// nextflow.enable.dsl=2
+// nextflow {
+//     workDir = "work"
+//     trace = true
+//     publishDir path: "${outputDir}", pattern: "*", mode: 'copy'
+// }
