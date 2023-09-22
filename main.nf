@@ -9,7 +9,7 @@ process perlStuff {
    stdout
     """
 
-    echo "Hi there!"
+    echo "Hi there! "
     echo $params.outputDir
     """
 }
