@@ -8,10 +8,9 @@ process perlStuff {
    output:
    stdout
     """
-
+    #!/bin/bash
     echo "Hi there!"
     echo $params.outputDir
-    #ls $params.pathVolumeA
     """
 }
 
