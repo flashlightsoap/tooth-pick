@@ -11,7 +11,7 @@ process perlStuff {
     #!/bin/bash
     echo "Hi there!"
     echo $params.outputDir
-    ls /mnt/nft-pgx
+    ls $params.fileName
     """
 }
 
