@@ -11,7 +11,8 @@ process perlStuff {
     #!/bin/bash
     echo "Hi there!"
     echo $params.outputDir
-    ls $params.fileName
+    sleep 5m
+    #ls $params.fileName
     """
 }
 
