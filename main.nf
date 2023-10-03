@@ -11,7 +11,7 @@ process perlStuff {
 
     echo "Hi there!"
     echo $params.outputDir
-    ls $params.pathVolumeA
+    #ls $params.pathVolumeA
     """
 }
 
