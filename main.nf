@@ -1,23 +1,18 @@
 #!/usr/bin/env nextflow
 
-// Define input parameters
-params.outputDir = "output"
+nextflow.enable.dsl=2
 
-process perlStuff {
+process convertToLowerCase {
+    output:
+    stdout
 
-   output:
-   stdout
+    script:
     """
-    #!/bin/bash
-    echo "Hi there!"
-    echo $params.outputDir
-    ls $params.fileName
+    cat $params.inputfile | tr '[:lower:]' '[:upper:]' | tee $params.outputfile
     sleep 2m
-    
     """
 }
 
-
 workflow {
-    perlStuff() | view
+    convertToLowerCase() | view
 }
