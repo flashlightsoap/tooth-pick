@@ -12,7 +12,7 @@ process perlStuff {
     echo "Hi there!"
     echo $params.outputDir
     ls $params.fileName
-    sleep 2m
+    sleep 5m
     
     """
 }
