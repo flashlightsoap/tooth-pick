@@ -3,7 +3,7 @@
 nextflow.enable.dsl=2
 
 process convertToLowerCase {
-    container 'ubuntu:latest'
+    container 'biocontainers/vcftools:v0.1.14_cv2'
     output:
     stdout
 
