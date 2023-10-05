@@ -24,19 +24,19 @@ process pharmcatProcess {
 
     script:
     """
-    echo "Running pre-run script..."
-    apt-get install bzip2
-    echo "Done pre-run script..."
+    #echo "Running pre-run script..."
+    #apt-get install bzip2
+    #echo "Done pre-run script..."
 
     echo "Getting version of pharmcat"
     bzip2 -V
     pwd
-    sleep 2m
+    #sleep 2m
     /pharmcat/pharmcat -version
     echo "Got version of pharmcat"
     ls /pharmcat/*
     echo "/pharmcat/pharmcat_vcf_preprocessor.py present"
-
+    sleep 2m
     """
 }
 
