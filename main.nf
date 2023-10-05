@@ -22,6 +22,15 @@ process pharmcatProcess {
     output:
     stdout
 
+    beforeScript:
+    """
+    #!/bin/bash
+    
+    echo "Running pre-run script..."
+    apt-get install bzip2
+    echo "Done pre-run script..."
+    """
+
     script:
     """
     echo "Getting version of pharmcat"
