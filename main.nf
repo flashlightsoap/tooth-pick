@@ -3,7 +3,7 @@
 nextflow.enable.dsl=2
 
 process convertToLowerCase {
-
+    container 'biocontainers/vcftools:v0.1.16-1-deb_cv1'
     output:
     stdout
 
@@ -13,7 +13,6 @@ process convertToLowerCase {
     vcftools --version
     echo "Got version of vcftool"
 
-    sleep 2m
     """
 }
 
