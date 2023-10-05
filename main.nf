@@ -32,10 +32,10 @@ process pharmcatProcess {
     bzip2 -V
     pwd
     #sleep 2m
-    pharmcat -version
+    /pharmcat/pharmcat -version
     echo "Got version of pharmcat"
-    ls pharmcat_vcf_preprocessor.py
-    echo "pharmcat_vcf_preprocessor present"
+    ls /pharmcat/pharmcat_vcf_preprocessor.py
+    echo "/pharmcat/pharmcat_vcf_preprocessor.py present"
 
     """
 }
