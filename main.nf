@@ -5,7 +5,7 @@ nextflow.enable.dsl=2
 params.inputFile= file('input.txt')
 
 process convertToLowerCase {
-    Container 'biocontainers/vcftools'
+    container 'biocontainers/vcftools'
 
     output:
     stdout
