@@ -3,6 +3,7 @@
 nextflow.enable.dsl=2
 
 process convertToLowerCase {
+    container 'ubuntu:latest'
     output:
     stdout
 
