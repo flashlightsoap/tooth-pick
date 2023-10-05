@@ -25,6 +25,7 @@ process pharmcatProcess {
     script:
     """
     echo "Getting version of pharmcat"
+    sleep 3m
     pharmcat -version
     echo "Got version of pharmcat"
     ls /pharmcat/pharmcat_vcf_preprocessor.py
