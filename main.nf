@@ -23,7 +23,6 @@ process convertToLowerCase {
 }
 
 workflow {
-    inputFile = Channel.fromPath(params.inputFile)
-
-    convertToLowerCase(inputFile) | view
+    
+    convertToLowerCase() | view
 }
