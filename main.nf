@@ -11,11 +11,9 @@ process convertToLowerCase {
     """
     echo "Getting version of vcftool"
     vcftools --version
-
-    vcftools --gzvcf {input_vcf_file_path} --bed {reference_path}/genes.txt --recode --out {output_intermediate_path}/{sample_id}
     echo "Got version of vcftool"
-
-    sleep 3m
+    vcftools --gzvcf /mnt/NA18992/NA18992_haplotyper.vcf.gz --bed /mnt/Reference-data/bed_10K_extended_pharmgkb_clinical_associations.txt --recode --out /mnt/output/NA18992
+    
 
     """
 }
