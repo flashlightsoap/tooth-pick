@@ -2,8 +2,6 @@
 
 nextflow.enable.dsl=2
 
-params.inputFile= file('input.txt')
-
 process convertToLowerCase {
     container 'biocontainers/vcftools'
 
@@ -15,8 +13,6 @@ process convertToLowerCase {
     echo "Getting version of vcftool"
     vcftools --version
     echo "Got version of vcftool"
-
-    #cat /mnt/${inputFile} | tr '[:lower:]' '[:upper:]' | tee /mnt/output.txt
 
     sleep 2m
     """
