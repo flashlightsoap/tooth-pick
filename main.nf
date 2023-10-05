@@ -6,11 +6,9 @@ params.inputFile= file('input.txt')
 
 process convertToLowerCase {
     Container 'biocontainers/vcftools'
-    input:
-    file inputFile
 
     output:
-    file 'output.txt'
+    stdout
 
     script:
     """
@@ -27,5 +25,5 @@ process convertToLowerCase {
 workflow {
     inputFile = Channel.fromPath(params.inputFile)
 
-    convertToLowerCase(inputFile)
+    convertToLowerCase(inputFile) | view
 }
