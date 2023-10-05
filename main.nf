@@ -2,18 +2,18 @@
 
 nextflow.enable.dsl=2
 
-params.inputFile= file('/mnt/input.txt')
+params.inputFile= file('input.txt')
 
 process convertToLowerCase {
     input:
     file inputFile
 
     output:
-    file '/mnt/output.txt'
+    file 'output.txt'
 
     script:
     """
-    cat ${inputFile} | tr '[:lower:]' '[:upper:]' | tee output.txt
+    cat /mnt/${inputFile} | tr '[:lower:]' '[:upper:]' | tee /mnt/output.txt
 
     sleep 2m
     """
