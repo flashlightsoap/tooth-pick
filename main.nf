@@ -31,7 +31,7 @@ process pharmcatProcess {
     echo "Getting version of pharmcat"
     bzip2 -V
     pwd
-    #sleep 2m
+    sleep 2m
     /pharmcat/pharmcat -version
     echo "Got version of pharmcat"
     ls /pharmcat/pharmcat_vcf_preprocessor.py
