@@ -1,47 +1,84 @@
 #!/usr/bin/env nextflow
 
-nextflow.enable.dsl=2
+// Define input parameters
+params.outputDir = "output"
 
-// process convertToLowerCase {
-//     container 'biocontainers/vcftools:v0.1.14_cv2'
-//     output:
-//     stdout
+process vcftoolsProcess {
+   beforeScript '/Users/amaan.saifan/Documents/kube/new/next/h.sh'
 
-//     script:
-//     """
-//     echo "Getting version of vcftool"
-//     vcftools --version
-//     echo "Got version of vcftool"
-//     vcftools --gzvcf /mnt/NA18992/NA18992_haplotyper.vcf.gz --bed /mnt/Reference-data/bed_10K_extended_pharmgkb_clinical_associations.txt --recode --out /mnt/output/NA18992
+   container 'biocontainers/vcftools:v0.1.14_cv2'
+   
+   output:
+   val "test"
+
+    """
+    #!/bin/bash
+    #echo "Hi there!"
+    #echo $params.outputDir
+    #ls $params.fileName
+    #sleep 2m
     
 
-//     """
-// }
+    echo "Getting version of vcftool"
+    vcftools --version
+    echo "Got version of vcftool"
+    #vcftools --gzvcf /mnt/NA18992/NA18992_haplotyper.vcf.gz --bed /mnt/Reference-data/bed_10K_extended_pharmgkb_clinical_associations.txt --recode --out /mnt/output/NA18992
+    
+
+    """
+}
+
 process pharmcatProcess {
     container 'pgkb/pharmcat:latest'
-    output:
-    stdout
+
+    input:
+    val vcftoolsOutput 
+
+    //output:
+    //val "pharmcatProcess"
 
     script:
     """
+    #!/bin/bash
     #echo "Running pre-run script..."
     #apt-get install bzip2
     #echo "Done pre-run script..."
 
     echo "Getting version of pharmcat"
-    bzip2 -V
-    pwd
+    #bzip2 -V
+    #pwd
     #sleep 2m
     /pharmcat/pharmcat -version
-    echo "Got version of pharmcat"
-    ls /pharmcat/*
-    echo "/pharmcat/pharmcat_vcf_preprocessor.py present"
-    sleep 2m
+    ls /pharmcat/pharmcat_vcf_preprocessor.py
+    
     """
 }
 
-workflow {
+process pypgxProcess {
+    container 'ubuntu:latest'
+    //output:
+    //val "pharmcatProcess"
+
+    script:
+    """
+    sleep 10m
+    #print("Hello world")
+    #pip3 install pypgx
     
-    // convertToLowerCase() | view
-    pharmcatProcess() | view
+    """
+}
+
+
+workflow {
+
+    //vcftoolsProcess() 
+    //pharmcatProcess(vcftoolsProcess.out) 
+
+
+    pypgxProcess()    
+
+    // vcftoolsOutput = "errsds"
+    // vcftoolsProcess() { output_file -> vcftoolsOutput }
+
+    // pharmcatProcess(vcftoolsOutput)
 }
