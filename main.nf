@@ -8,7 +8,7 @@ process pypgxProcess {
 
     script:
     """
-    #sleep 10m
+    sleep 10m
     
     python3 --version
     tabix --version
