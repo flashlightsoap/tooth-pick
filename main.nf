@@ -1,14 +1,14 @@
 process pypgxProcess {
     container 'pgkb/pharmcat:latest'
    //container 'nextflow-pharmcat:0.0.1'
-   beforeScript './backupscript.sh' 
+   //beforeScript './backupscript.sh' 
 
     output:
     stdout
 
     script:
     """
-    #sleep 50m
+    sleep 10m
     
     python3 --version
     tabix --version
