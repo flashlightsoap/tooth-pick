@@ -15,7 +15,7 @@ process convertToLowerCase {
     """
     cat /mnt/${inputFile} | tr '[:lower:]' '[:upper:]' | tee /mnt/output.txt
 
-    sleep 2m
+    #sleep 2m
     """
 }
 
