@@ -26,14 +26,14 @@ process pypgxProcess {
     mkdir /root/pypgx-bundle/1kgp/GRCh38 
     mkdir /root/pypgx-bundle/cnv/GRCh38
 
-    cp /Users/amaan.saifan/Documents/kube/new/next/samples/NA18992/nf/CYP2D6.vcf.gz.tbi '/root/pypgx-bundle/1kgp/GRCh38/'
+    cp /mnt/Reference-data/CYP2D6.vcf.gz.tbi '/root/pypgx-bundle/1kgp/GRCh38/'
 
-    cp /Users/amaan.saifan/Documents/kube/new/next/samples/NA18992/nf/CYP2D6.vcf.gz '/root/pypgx-bundle/1kgp/GRCh38/'
+    cp /mnt/Reference-data/CYP2D6.vcf.gz '/root/pypgx-bundle/1kgp/GRCh38/'
 
-    cp /Users/amaan.saifan/Documents/kube/new/next/samples/NA18992/nf/CYP2D6.zip '/root/pypgx-bundle/cnv/GRCh38/'
-    cp /Users/amaan.saifan/Documents/kube/new/next/samples/NA18992/nf/G6PD.vcf.gz.tbi '/root/pypgx-bundle/1kgp/GRCh38/'
-    cp /Users/amaan.saifan/Documents/kube/new/next/samples/NA18992/nf/G6PD.vcf.gz '/root/pypgx-bundle/1kgp/GRCh38/'
-    cp /Users/amaan.saifan/Documents/kube/new/next/samples/NA18992/nf/G6PD.zip '/root/pypgx-bundle/cnv/GRCh38/'
+    cp /mnt/Reference-data/CYP2D6.zip '/root/pypgx-bundle/cnv/GRCh38/'
+    cp /mnt/Reference-data/G6PD.vcf.gz.tbi '/root/pypgx-bundle/1kgp/GRCh38/'
+    cp /mnt/Reference-data/G6PD.vcf.gz '/root/pypgx-bundle/1kgp/GRCh38/'
+    cp /mnt/Reference-data/G6PD.zip '/root/pypgx-bundle/cnv/GRCh38/'
 
     
     pypgx --version
