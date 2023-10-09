@@ -1,7 +1,7 @@
 process pypgxProcess {
     container 'pgkb/pharmcat:latest'
    //container 'nextflow-pharmcat:0.0.1'
-   beforeScript '/Users/amaan.saifan/Documents/kube/new/next/backupscript.sh' 
+   beforeScript './backupscript.sh' 
 
     output:
     stdout
