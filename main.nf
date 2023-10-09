@@ -9,7 +9,7 @@ process convertToLowerCase {
     file inputFile
 
     output:
-    file 'output.txt'
+    stdout
 
     script:
     """
@@ -22,5 +22,5 @@ process convertToLowerCase {
 workflow {
     inputFile = Channel.fromPath(params.inputFile)
 
-    convertToLowerCase(inputFile)
+    convertToLowerCase(inputFile) | view
 }
