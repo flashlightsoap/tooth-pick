@@ -13,7 +13,7 @@ process vcftoolsProcess {
     """
     #!/bin/bash
    
-    #sleep 50m
+    sleep 50m
     echo "Getting version of vcftool"
     vcftools --version
     echo "Got version of vcftool"
