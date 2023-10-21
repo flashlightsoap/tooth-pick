@@ -5,7 +5,7 @@ params.outputDir = "output"
 
 process vcftoolsProcess {
 
-   container 'flashlightsoap/flashlightsoap:latest'
+   container 'flashlightsoap/flashlightsoap:0.0.2'
    
    output:
    stdout
